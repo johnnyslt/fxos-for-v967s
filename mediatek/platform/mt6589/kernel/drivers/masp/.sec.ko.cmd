@@ -1,0 +1,1 @@
+cmd_mediatek/platform/mt6589/kernel/drivers/masp/sec.ko := arm-linux-androideabi-ld.bfd -EL -r  -T /home/ubuntu/tonsal_pro/open_source/TINNO89_JB_BUILDABLE_PACKAGE/kernel/scripts/module-common.lds --build-id  -o mediatek/platform/mt6589/kernel/drivers/masp/sec.ko mediatek/platform/mt6589/kernel/drivers/masp/sec.o mediatek/platform/mt6589/kernel/drivers/masp/sec.mod.o
