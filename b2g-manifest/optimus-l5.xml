@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote name="aosp"
-          fetch="https://android.googlesource.com/" />
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com/" />
   <remote name="b2g"
           fetch="git://github.com/mozilla-b2g/" />
   <remote name="mozilla"
 	  fetch="git://github.com/mozilla/" />
   <remote name="caf"
           fetch="git://codeaurora.org/" />
+  <remote  name="linaro"
+           fetch="http://android.git.linaro.org/git-ro/" />
   <remote name="mozillaorg"
-          fetch="https://git.mozilla.org/releases" />
+           fetch="https://git.mozilla.org/releases" />
   <remote name="apitrace" fetch="git://github.com/apitrace/" />
-  <default revision="b2g/ics_strawberry_v1"
+  <default revision="ics_chocolate"
            remote="caf"
            sync-j="4" />
 
@@ -25,10 +27,8 @@
   <project path="gecko" name="gecko.git" remote="mozillaorg" revision="master" />
   <project path="gonk-misc" name="gonk-misc" remote="b2g" revision="master" />
   <project path="rilproxy" name="rilproxy" remote="b2g" revision="master" />
-  <project path="librecovery" name="librecovery" remote="b2g" revision="master" />
   <project path="external/moztt" name="moztt" remote="b2g" revision="master" />
   <project path="external/apitrace" name="apitrace" remote="apitrace" revision="master" />
-  <project path="patches" name="gonk-patches" remote="b2g" revision="master" />
 
   <!-- Stock Android things -->
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -48,7 +48,6 @@
   <project path="external/dnsmasq" name="platform/external/dnsmasq" />
   <project path="external/elfcopy" name="platform_external_elfcopy" remote="b2g" revision="master" />
   <project path="external/elfutils" name="platform_external_elfutils" remote="b2g" revision="master" />
-  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" />
   <project path="external/expat" name="platform/external/expat" />
   <project path="external/fdlibm" name="platform/external/fdlibm" />
   <project path="external/flac" name="platform/external/flac" />
@@ -67,6 +66,7 @@
   <project path="external/libvpx" name="platform/external/libvpx" />
   <project path="external/llvm" name="platform/external/llvm" />
   <project path="external/mksh" name="platform/external/mksh" />
+  <project path="external/opensans" name="platform_external_opensans" remote="b2g" revision="master" />
   <project path="external/openssl" name="platform/external/openssl" />
   <project path="external/protobuf" name="platform/external/protobuf" />
   <project path="external/safe-iop" name="platform/external/safe-iop" />
@@ -77,7 +77,7 @@
   <project path="external/sqlite" name="platform/external/sqlite" revision="fb30e613139b8836fdc8e81e166cf3a76e5fa17f"/>
   <project path="external/stlport" name="platform/external/stlport" />
   <project path="external/strace" name="platform/external/strace" />
-  <project path="external/svox" name="platform/external/svox" revision="ics_strawberry" />
+  <project path="external/svox" name="platform/external/svox" />
   <project path="external/tagsoup" name="platform/external/tagsoup" />
   <project path="external/tinyalsa" name="platform/external/tinyalsa" />
   <project path="external/tremolo" name="platform/external/tremolo" />
@@ -88,7 +88,7 @@
   <project path="external/hostap" name="platform/external/hostap" />
   <project path="external/zlib" name="platform/external/zlib" />
   <project path="external/yaffs2" name="platform/external/yaffs2" />
-  <project name="platform/frameworks/base" path="frameworks/base" />
+  <project name="platform/frameworks/base" path="frameworks/base" revision="49aed1902b259173c8d3ca12727031c3fc464a14"/>
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
   <project path="frameworks/support" name="platform/frameworks/support" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
@@ -103,17 +103,16 @@
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="platform/system/vold" />
 
-  <!-- hamachi specific things -->
-  <project path="device/mediatek/common" name="device/mediatek/common" />
-  <project path="device/mediatek/mt6589" name="platform/vendor/mediatek/mt6589" />
-  <project path="device/mediatek/hamachi" name="android-device-hamachi" remote="b2g" revision="master" />
-  <project path="kernel" name="kernel/msm" />
-  <project path="hardware/mediatek/camera" name="platform/hardware/mediatek/camera" />
-  <project path="hardware/mediatek/display" name="platform/hardware/mediatek/display" />
-  <project path="hardware/mediatek/media" name="platform/hardware/mediatek/media" />
-  <project path="hardware/mediatek/gps" name="platform/hardware/mediatek/gps" />
-  <project path="hardware/mt6589" name="platform/hardware/mt6589" />
-  <project path="vendor/mediatek/opensource/omx/mm-core" name="platform/vendor/mediatek-opensource/omx/mm-core" />
-  <project path="hardware/ril" name="platform/hardware/ril" remote="caf" />
+  <!-- M4 specific things -->
+  <project path="device/qcom/common" name="device/qcom/common" />
+  <project path="device/qcom/msm7627a" name="platform/vendor/qcom/msm7627a" />
+  <project path="device/lge/m4" name="android-device-m4" remote="b2g" revision="master" />
+  <project path="kernel" name="codeaurora_kernel_msm" remote="b2g" revision="master" />
+  <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" />
+  <project path="hardware/qcom/display" name="hardware_qcom_display" remote="b2g" />
+  <project path="hardware/qcom/media" name="platform/hardware/qcom/media" />
+  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" />
+  <project path="hardware/msm7k" name="platform/hardware/msm7k" />
+  <project path="vendor/qcom/opensource/omx/mm-core" name="platform/vendor/qcom-opensource/omx/mm-core" />
+  <project path="hardware/ril" name="platform/hardware/ril" />
 </manifest>
-
