@@ -11,6 +11,11 @@ import /init.trace.rc
 import init.xlog.rc
 
 on early-init
+    
+    # B2G
+    start ueventd
+    import /init.b2g.rc
+    
     # Set init and its forked children's oom_adj.
     write /proc/1/oom_adj -16
 
